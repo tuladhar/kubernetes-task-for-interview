@@ -1,6 +1,6 @@
 # Kubernetes Task for Interview
 
-### Create local Kubernetes cluster
+### Create local Kubernetes cluster using minikube and Docker
 ```
 minikube start
 ```
