@@ -21,6 +21,7 @@ kubectl apply -f kubernetes/pong/redis-service.yaml -n pong
 ```
 eval $(minikube docker-env)
 docker build -t ping-app:v1 .
+minikube ssh docker images | grep ping-app
 ```
 
 ### Deploy ping-app in ping namespace
