@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-app-deployment
+  labels:
+    app: ping
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping
+  template:
+    metadata:
+      labels:
+        app: ping
+    spec:
+      containers:
+        - name: ping-app
+          image: ping-app:v1
+          env:
+            - name: REDIS_ENDPOINT
+              value: redis-service.pong.svc.cluster.local
